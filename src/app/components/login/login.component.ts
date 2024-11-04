@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   logar(){
     this.service.authenticate(this.creds).subscribe(response => {
       this.service.successfullLogin(response.body.accessToken); 
-      this.router.navigate(['home']); 
+      this.router.navigate(['']); 
     }, () => {
       this.toast.error('Usuário e/ou senha inválidos!'); 
     })

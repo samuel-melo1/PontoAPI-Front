@@ -15,7 +15,6 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   authenticate(credenciais: Credenciais): Observable<any>{
-
     return this.http.post(`${API_ROUTE.baseUrl}/api/auth/login/signin`, credenciais, {
       observe: 'response',
       responseType: 'json'
@@ -26,10 +25,10 @@ export class AuthService {
       localStorage.setItem('token', authToken); 
   }
 
-  isAuthenticated(authToken: string){
+  isAuthenticated(){
     let token = localStorage.getItem('token'); 
     if(token != null){
-      return !this.jwtService.isTokenExpired(authToken); 
+      return !this.jwtService.isTokenExpired(token); 
     }
     return false; 
   }
