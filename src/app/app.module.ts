@@ -23,16 +23,15 @@ import { MatCardModule } from '@angular/material/card';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxMaskModule } from 'ngx-mask';
 import { LoginComponent } from './components/login/login.component';
-import { NavComponent } from './components/nav/nav.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { HeaderComponent } from './components/header/header.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavComponent,
     PerfilComponent,
     HeaderComponent
   ],

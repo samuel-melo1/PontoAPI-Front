@@ -1,8 +1,49 @@
-.container{
-    margin: auto;
+
+.header {
     width: 100%;
+    height: 5rem; /* Define a altura fixa do header */
+    display: flex;
+    align-items: center;
+   padding-left: 1rem;
+   background-color: #53a9f5;
 }
 
-h1{
-    padding: .5rem 10%;
+.toolbar{
+    background-color: #53a9f5;
+}
+
+.container {
+    height: calc(100vh - 5rem); /* Ajusta para ocupar a altura total da tela menos a toolbar */
+    display: flex;
+    flex-direction: row;
+    /* Remove qualquer scroll indesejado */
+}
+
+img {
+    height: 15rem; /* Define a altura fixa da imagem */
+    width: 10rem;  /* Ajusta a largura automaticamente para manter a proporção */
+}
+
+.sidenav{
+    width: 15rem;
+    color: white;
+
+}
+
+.sidenav a {
+    color: rgb(49, 41, 41);
+}
+
+.sidenav a:hover{
+   color: #53a9f5
+}
+
+.sidenav i {
+    margin-right: 0.6rem;
+}
+
+.menu{
+    margin: 1rem  0 0 1rem;
+    color: white;
+    background: #53a9f5;
 }
