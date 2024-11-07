@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Users } from 'src/app/models/users';
+import { UserService } from 'src/app/services/user.service';
+import { jwtDecode } from "jwt-decode";
 
 @Component({
   selector: 'app-perfil',
@@ -6,16 +11,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-  isSidenavOpen = false;
+  
+  user: Users ={
+    id: '',
+    name: '',
+    cpf: '',
+    email: '',
+    password: '',
+    telefone: '', 
+    cargo: '',
+    departamento: '',
+    permissions: []
 
-  constructor() { }
+  }
+
+  constructor(private service: UserService,
+    private toastr: ToastrService, 
+    private router: Router,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.findByEmail(); 
   }
 
- 
-  toggleSidenav() {
-    this.isSidenavOpen = !this.isSidenavOpen;
+  findByEmail(): void{
+    this.service.findByEmail(this.getDecodedAccessToken(localStorage.getItem('token'))).subscribe(response =>{
+      console.log(response);
+      this.user = response; 
+    })
   }
+
+  getDecodedAccessToken(token: string): any {
+  try {
+    return jwtDecode(token).sub;
+  } catch(Error) {
+    return null;
+  }
+}
+
 
 }

@@ -1,69 +1,79 @@
 .perfil-card {
-    padding: 2rem;
-    max-width: 80%;
-    margin: 8rem auto; /* Margem padrão para centralizar */
-  
-    /* Ajusta o card para a direita */
-    margin-left: 250px; /* Ajuste conforme a largura do seu sidenav */
-    margin-right: 250px;
-    transition: margin-left 0.3s; /* Suaviza a transição ao abrir/fechar o sidenav */
-  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
+  padding: 2rem;
+  max-width: 80%;
+  margin: 8rem auto;
+  margin-left: 250px;
+  /* Ajuste para a largura do sidenav */
+  margin-right: 250px;
+  transition: margin-left 0.3s;
+  border-radius: 8px;
+}
 
-  .mat-card-header {
-    display: flex;
-    align-items: center;
-    padding: 0;
-    margin-bottom: 1.5rem; /* Espaço entre o cabeçalho e os campos */
-  }
-  
-  .profile-picture {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: #e0e0e0;
-    margin-right: 1rem;
-  }
-  
-  .profile-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .header-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .card-title {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 1rem; /* Espaço entre os campos */
-  }
-  
-  .fullWidth {
-    width: 100%; /* Garante que todos os campos ocupem a largura total do container */
-  }
-  
-  p {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.6; /* Melhor legibilidade */
-    margin-top: 1.5rem;
-  }
+.field-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* Espaçamento entre os campos */
+}
 
-  @media (min-width: 1200px) {
-    .perfil-card {
-      max-width: 70%; /* Em telas grandes, define uma largura máxima */
-    }
+
+
+.mat-card-header {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  /* Espaço entre o cabeçalho e os campos */
+}
+
+.profile-picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  margin-right: 1rem;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-title {
+  font-weight: bold;
+  color: #333;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+  /* Espaço entre os campos */
+}
+
+.fullWidth {
+  flex: 1 1 48%;
+  /* Faz com que cada campo ocupe 48% da largura disponível */
+}
+
+p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  /* Melhor legibilidade */
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 1200px) {
+  .perfil-card {
+    max-width: 70%;
+    /* Em telas grandes, define uma largura máxima */
   }
-  
+}
