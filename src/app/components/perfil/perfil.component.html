@@ -5,7 +5,7 @@
             <img src="assets/img/user-placeholder.jpg" alt="">
         </div>
         <div class="header-info" >
-            <mat-card-title class="card-title" >Samuel de Melo</mat-card-title>
+            <mat-card-title class="card-title" >{{user.name}}</mat-card-title>
             <mat-card-subtitle> {{user.email}} </mat-card-subtitle>
         </div>
     </mat-card-header>
@@ -20,7 +20,7 @@
     
             <mat-form-field class="fullWidth" appearance="legacy">
                 <mat-label>CPF</mat-label>
-                <input [(ngModel)] = "user.cpf" name="cpf" matInput placeholder="Ex.. 000.000.000-00">
+                <input [(ngModel)] = "user.cpf" name="cpf"  mask="000.000.000-00" matInput placeholder="Ex.. 000.000.000-00">
                 
                 <mat-icon matSuffix>pin</mat-icon>
             </mat-form-field>
@@ -32,12 +32,6 @@
             </mat-form-field>
     
             <mat-form-field class="fullWidth" appearance="legacy">
-                <mat-label>Senha</mat-label>
-                <input [(ngModel)] = "user.password" name="password"  type="password" matInput placeholder="Ex. 1234">
-                <mat-icon matSuffix>password</mat-icon>
-            </mat-form-field>
-    
-            <mat-form-field class="fullWidth" appearance="legacy">
                 <mat-label>Telefone</mat-label>
                 <input [(ngModel)] = "user.telefone" name="telefone" matInput placeholder="Ex.. (48)99682-9940">
                 <mat-icon matSuffix>call</mat-icon>
@@ -45,25 +39,23 @@
     
             <mat-form-field class="fullWidth" appearance="legacy">
                 <mat-label>Cargo</mat-label>
-                <input [(ngModel)] = "user.cargo" name="cargo" matInput placeholder="Ex.. user@gmail.com">
+                <input [(ngModel)] = "user.cargo.name" name="cargo" matInput placeholder="Ex.. user@gmail.com">
                 <mat-icon matSuffix>badge</mat-icon>
             </mat-form-field>
     
             <mat-form-field class="fullWidth" appearance="legacy">
                 <mat-label>Departamento</mat-label>
-                <input [(ngModel)] = "user.departamento" name="departamento" matInput placeholder="Ex.. user@gmail.com">
+                <input [(ngModel)] = "user.departamento.name" name="departamento" matInput placeholder="Ex.. user@gmail.com">
                 <mat-icon matSuffix>group</mat-icon>
             </mat-form-field>
     
             <mat-form-field class="fullWidth" appearance="legacy">
                 <mat-label>Permissões</mat-label>
-                <mat-select [(ngModel)]="user.permissions" name="cliente"  required >
-                  <mat-option >{{ user.permissions }}</mat-option>
+                <mat-select [(ngModel)]="user.permissions" name="permissions"  >
+                  <mat-option *ngFor="let permissions of permis" value="{{ permissions.id_role }}">{{ permissions.id_role }}</mat-option>
                 </mat-select>
                 <mat-icon matSuffix>lock</mat-icon>
             </mat-form-field>
-            
-            <!-- Continue com os outros campos aqui da mesma forma -->
         </div>
     </mat-card-content>
 </mat-card>

@@ -4,6 +4,9 @@ import { ToastrService } from 'ngx-toastr';
 import { Users } from 'src/app/models/users';
 import { UserService } from 'src/app/services/user.service';
 import { jwtDecode } from "jwt-decode";
+import { Departamento } from 'src/app/models/departamento';
+import { Cargo } from 'src/app/models/cargo';
+import { Permissoes } from 'src/app/models/permissoes';
 
 @Component({
   selector: 'app-perfil',
@@ -11,6 +14,21 @@ import { jwtDecode } from "jwt-decode";
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
+
+  departamento: Departamento = {
+    id_departamento: '', 
+    name: '',
+    status: true
+  }
+
+  cargo: Cargo = {
+    id_cargo: '', 
+    name: '',
+    status: true
+  }
+
+  permis: Permissoes[] = [];
+
   
   user: Users ={
     id: '',
@@ -19,11 +37,13 @@ export class PerfilComponent implements OnInit {
     email: '',
     password: '',
     telefone: '', 
-    cargo: '',
-    departamento: '',
-    permissions: []
+    cargo: this.cargo,
+    departamento: this.departamento,
+    permissions: this.permis
 
   }
+
+
 
   constructor(private service: UserService,
     private toastr: ToastrService, 
@@ -51,3 +71,7 @@ export class PerfilComponent implements OnInit {
 
 
 }
+function forEach(arg0: (permissions: any) => void) {
+  throw new Error('Function not implemented.');
+}
+
