@@ -1,3 +1,7 @@
+import { Cargo } from "./cargo";
+import { Departamento } from "./departamento";
+import { Permissoes } from "./permissoes";
+
 export interface Users{
     id?: any;
     name: string; 
@@ -5,7 +9,7 @@ export interface Users{
     email: string;
     password: string; 
     telefone: string; 
-    cargo: string; 
-    departamento: string; 
-    permissions: string[]; 
+    cargo: Cargo; 
+    departamento: Departamento; 
+    permissions: Permissoes[]; 
 }
