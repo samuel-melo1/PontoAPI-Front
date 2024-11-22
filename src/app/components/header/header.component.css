@@ -5,18 +5,21 @@
     display: flex;
     align-items: center;
    padding-left: 1rem;
-   background-color: #53a9f5;
+   background-color: rgb(29, 165, 147);
 }
 
 .toolbar{
-    background-color: #53a9f5;
+    background-color: rgb(29, 165, 147);
 }
 
 .container {
-    height: calc(100vh - 5rem); /* Ajusta para ocupar a altura total da tela menos a toolbar */
+    height: calc(100vh - 5rem); /* Altura total menos a toolbar */
     display: flex;
     flex-direction: row;
-    /* Remove qualquer scroll indesejado */
+    margin: 0;
+    padding: 0;
+    box-shadow: none; /* Remove sombras caso existam */
+    background-color: white; /* Garante fundo branco */
 }
 
 img {
@@ -24,10 +27,12 @@ img {
     width: 10rem;  /* Ajusta a largura automaticamente para manter a proporção */
 }
 
-.sidenav{
-    width: 15rem;
+.sidenav {
+    width: 15rem; /* Define a largura fixa */
     color: white;
-
+    margin: 0; /* Remove margens extras */
+    padding: 0; /* Remove padding interno */
+    box-shadow: none; /* Remove qualquer borda ou sombra */
 }
 
 .sidenav a {
@@ -35,7 +40,7 @@ img {
 }
 
 .sidenav a:hover{
-   color: #53a9f5
+   color: rgb(29, 165, 147);
 }
 
 .sidenav i {
@@ -45,5 +50,12 @@ img {
 .menu{
     margin: 1rem  0 0 1rem;
     color: white;
-    background: #53a9f5;
+    background: rgb(29, 165, 147);
 }
+
+.navlist {
+    padding: 0; /* Remove padding interno */
+    margin: 0; /* Remove margens */
+}
+
+/*     background: #53a9f5; */

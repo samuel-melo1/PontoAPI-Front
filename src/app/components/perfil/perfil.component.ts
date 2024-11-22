@@ -43,12 +43,12 @@ export class PerfilComponent implements OnInit {
 
   }
 
-
-
   constructor(private service: UserService,
     private toastr: ToastrService, 
     private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute) { 
+    
+  }
 
   ngOnInit(): void {
     this.findByEmail(); 
@@ -62,16 +62,13 @@ export class PerfilComponent implements OnInit {
   }
 
   getDecodedAccessToken(token: string): any {
-  try {
-    return jwtDecode(token).sub;
-  } catch(Error) {
-    return null;
+    try {
+      return jwtDecode(token).sub;
+    } catch(Error) {
+      return null;
+   }
   }
-}
 
-
-}
-function forEach(arg0: (permissions: any) => void) {
-  throw new Error('Function not implemented.');
+  
 }
 

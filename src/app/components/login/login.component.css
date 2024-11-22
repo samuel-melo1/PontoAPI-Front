@@ -1,5 +1,8 @@
+
+/*
 .container{
     height: 100%;
+    width: 100%;
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(37,97,207,1) 0%, rgba(0, 212, 255, 1) 100%);
     display: flex;
     align-items: center;
@@ -29,4 +32,9 @@ button{
 mat-icon{
     opacity: .6;
 }
+*/
 
+.login {
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgb(29, 165, 147) 0%, rgba(0, 255, 136, 0.336) 100%);
+
+}
