@@ -1,9 +1,8 @@
-.perfil-card {
+/* .perfil-card {
   padding: 2rem;
   max-width: 80%;
   margin: 8rem auto;
   margin-left: 250px;
-  /* Ajuste para a largura do sidenav */
   margin-right: 250px;
   transition: margin-left 0.3s;
   border-radius: 8px;
@@ -13,7 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  /* Espaçamento entre os campos */
+
 }
 
 
@@ -23,7 +22,7 @@
   align-items: center;
   padding: 0;
   margin-bottom: 1.5rem;
-  /* Espaço entre o cabeçalho e os campos */
+
 }
 
 .profile-picture {
@@ -55,25 +54,24 @@
 mat-form-field {
   width: 100%;
   margin-bottom: 1rem;
-  /* Espaço entre os campos */
+  
 }
 
 .fullWidth {
   flex: 1 1 48%;
-  /* Faz com que cada campo ocupe 48% da largura disponível */
 }
 
 p {
   font-size: 0.9rem;
   color: #555;
   line-height: 1.6;
-  /* Melhor legibilidade */
+
   margin-top: 1.5rem;
 }
 
 @media (min-width: 1200px) {
   .perfil-card {
     max-width: 70%;
-    /* Em telas grandes, define uma largura máxima */
+    
   }
-}
+} */

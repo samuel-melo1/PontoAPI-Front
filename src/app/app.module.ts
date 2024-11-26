@@ -27,6 +27,8 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { PerfilComponent } from './components/perfil/perfil.component';
 
 import { HeaderComponent } from './components/header/header.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { HeaderComponent } from './components/header/header.component';
     AppComponent,
     LoginComponent,
     PerfilComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

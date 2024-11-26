@@ -10,11 +10,10 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   constructor(private router: Router, private authService: AuthService, private toast: ToastrService) { }
 
   ngOnInit(): void {
-    this.router.navigate([''])
+    this.router.navigate(['perfil'])
   }
 
   logout(){
