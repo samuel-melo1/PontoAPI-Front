@@ -51,23 +51,23 @@ export class PerfilComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.findByEmail(); 
+   // this.findByEmail(); 
   }
 
-  findByEmail(): void{
-    this.service.findByEmail(this.getDecodedAccessToken(localStorage.getItem('token'))).subscribe(response =>{
-      console.log(response);
-      this.user = response; 
-    })
-  }
+  // findByEmail(): void{
+  //   this.service.findByEmail(this.getDecodedAccessToken(localStorage.getItem('token'))).subscribe(response =>{
+  //     console.log(response);
+  //     this.user = response; 
+  //   })
+  // }
 
-  getDecodedAccessToken(token: string): any {
-    try {
-      return jwtDecode(token).sub;
-    } catch(Error) {
-      return null;
-   }
-  }
+  // getDecodedAccessToken(token: string): any {
+  //   try {
+  //     return jwtDecode(token).sub;
+  //   } catch(Error) {
+  //     return null;
+  //  }
+  // }
 
   
 }
