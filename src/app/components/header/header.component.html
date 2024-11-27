@@ -54,65 +54,62 @@
 
  -->
 
- <nav class="navbar">
-    <div class="container-fluid">
-      <!-- Botão para abrir/fechar a sidebar -->
-      <button 
-        class="navbar-toggler" 
-        type="button" 
-        (click)="toggleSidebar()"
-        aria-label="Toggle navigation">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
-  </nav>
+ <div class="d-flex flex-column vh-100">
+    <nav class="navbar">
+        <div class="container-fluid">
+         <!-- Botão para abrir/fechar a sidebar -->
+            <button class="navbar-toggler" type="button"  (click)="toggleSidebar()" aria-label="Toggle navigation">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+    </nav>
   
-  <div class="d-flex">
-    <!-- Sidebar -->
-    <div [class.active]="isSidebarOpen" class="sidebar">
-      <div class="p-2">
-        <h5 class="text-white">Menu</h5>
-        <ul class="list-unstyled">
-            <mat-nav-list class="navlist ">
-                <a mat-list-item routerLink="dashboard">
-                    <i class="material-icons">ssid_chart</i>
-                    Dashboard
-                </a>
-                <a mat-list-item routerLink="">
-                    <i class="material-icons">person</i>
-                    Meu perfil
-                </a>
-                <a mat-list-item routerLink="">
-                    <i class="material-icons">schedule</i>
-                    Meu ponto
-                </a>
-      
-                <a mat-list-item routerLink="">
-                    <i class="material-icons">sms</i>
-                    Solicitações
-                </a>
-      
-                <a mat-list-item routerLink="">
-                    <i class="material-icons">touch_app</i>
-                    Controle de ponto
-                </a>
-      
-                <a mat-list-item routerLink="">
-                    <i class="material-icons">settings</i>
-                    Configurações
-                </a>
-      
-                <a mat-list-item href="https://github.com/samuel-melo1/PontoAPI-Front" target="_blank">
-                    <i class="material-icons">code</i>
-                    Github
-                </a>
-                <a mat-list-item (click)="logout()" >
-                    <i class="material-icons">logout</i>
-                    Logout
-                </a>
-            </mat-nav-list>
-        </ul>
-      </div>
+    <div class="d-flex flex-grow-1">
+     <!-- Sidebar -->
+        <div [class.active]="isSidebarOpen" class="sidebar border-end">
+            <div class="p-2">
+                <h5 class="text-white">Menu</h5>
+                <ul class="list-unstyled">
+                    <mat-nav-list class="navlist ">
+                        <a mat-list-item routerLink="dashboard">
+                            <i class="material-icons">ssid_chart</i>
+                            Dashboard
+                        </a>
+                        <a mat-list-item routerLink="">
+                            <i class="material-icons">person</i>
+                            Meu perfil
+                        </a>
+                        <a mat-list-item routerLink="">
+                            <i class="material-icons">schedule</i>
+                            Meu ponto
+                        </a>
+        
+                        <a mat-list-item routerLink="">
+                            <i class="material-icons">sms</i>
+                            Solicitações
+                        </a>
+            
+                        <a mat-list-item routerLink="">
+                            <i class="material-icons">touch_app</i>
+                            Controle de ponto
+                        </a>
+        
+                        <a mat-list-item routerLink="">
+                            <i class="material-icons">settings</i>
+                            Configurações
+                        </a>
+            
+                        <a mat-list-item href="https://github.com/samuel-melo1/PontoAPI-Front" target="_blank">
+                            <i class="material-icons">code</i>
+                            Github
+                        </a>
+                        <a mat-list-item (click)="logout()" >
+                            <i class="material-icons">logout</i>
+                            Logout
+                        </a>
+                    </mat-nav-list>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
-  
+</div>
