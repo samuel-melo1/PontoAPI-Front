@@ -1,15 +1,30 @@
 .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
     background-color: rgb(29, 165, 147);
+    color: #fff;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
 }
 
 .sidebar {
-    width: 230px;
-    border-right: 1px solid rgba(205, 209, 208) ;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
-    overflow-y: auto;
-    
+    position: fixed;
+    top: 56px; /* Altura do navbar */
+    left: 0;
+    width: 250px; /* Largura fixa no desktop */
+    height: calc(100% - 56px); /* Altura responsiva considerando o navbar */
+    background-color: #f8f9fa; /* Fundo do sidebar */
+    z-index: 1050; /* Sobrepõe o conteúdo */
+    overflow-y: auto; /* Scroll interno se necessário */
+    transition: transform 0.3s ease; /* Animação para abrir/fechar */
+    transform: translateX(-100%); /* Esconde no mobile por padrão */
 }
+
   
 .sidebar a {
     color: rgb(49, 41, 41);
@@ -28,6 +43,7 @@
 
 .sidebar.active {
     transform: translateX(0);
+    z-index: 1050;
 }
   
 .content {
@@ -38,4 +54,10 @@
     margin-left: 250px;
 }
 
+@media (max-width: 768px) {
+    .sidebar {
+        background-color: rgb(29, 165, 147);/* Sidebar ocupa toda a largura em telas menores */
+ 
+    }
+}
 /*     background: #53a9f5; */

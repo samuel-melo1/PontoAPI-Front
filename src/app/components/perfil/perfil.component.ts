@@ -15,21 +15,10 @@ import { Permissoes } from 'src/app/models/permissoes';
 })
 export class PerfilComponent implements OnInit {
 
-  departamento: Departamento = {
-    id_departamento: '', 
-    name: '',
-    status: true
-  }
-
-  cargo: Cargo = {
-    id_cargo: '', 
-    name: '',
-    status: true
-  }
-
+  cargo: Cargo[] = [];
+  departamento: Departamento[] = []; 
   permis: Permissoes[] = [];
 
-  
   user: Users ={
     id: '',
     name: '',
@@ -40,7 +29,6 @@ export class PerfilComponent implements OnInit {
     cargo: this.cargo,
     departamento: this.departamento,
     permissions: this.permis
-
   }
 
   constructor(private service: UserService,
@@ -51,23 +39,29 @@ export class PerfilComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   // this.findByEmail(); 
+    this.findByEmail(); 
   }
 
-  // findByEmail(): void{
-  //   this.service.findByEmail(this.getDecodedAccessToken(localStorage.getItem('token'))).subscribe(response =>{
-  //     console.log(response);
-  //     this.user = response; 
-  //   })
-  // }
+  findByEmail(): void {
+    this.service.findByEmail(this.getDecodedAccessToken(localStorage.getItem('token'))).subscribe(response => {
+      console.log(response);  // Verifique a estrutura de 'response'
+      this.user = response;
+      // Se for um único objeto, converta para um array
+      this.cargo = Array.isArray(response.cargo) ? response.cargo : [response.cargo];
+      this.departamento = Array.isArray(response.departamento) ? response.departamento : [response.departamento];
+  
+      console.log(this.cargo);
+      console.log(this.departamento);
+    });
+  }
 
-  // getDecodedAccessToken(token: string): any {
-  //   try {
-  //     return jwtDecode(token).sub;
-  //   } catch(Error) {
-  //     return null;
-  //  }
-  // }
+  getDecodedAccessToken(token: string): any {
+    try {
+      return jwtDecode(token).sub;
+    } catch(Error) {
+      return null;
+   }
+  }
 
   
 }

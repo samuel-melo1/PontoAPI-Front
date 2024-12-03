@@ -25,9 +25,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { PerfilComponent } from './components/perfil/perfil.component';
-
 import { HeaderComponent } from './components/header/header.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 
 
@@ -37,7 +35,6 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     LoginComponent,
     PerfilComponent,
     HeaderComponent,
-    SidenavComponent,
   ],
   imports: [
     BrowserModule,

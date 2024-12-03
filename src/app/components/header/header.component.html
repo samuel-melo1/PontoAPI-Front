@@ -1,58 +1,3 @@
-<!-- <mat-toolbar class="toolbar">
-  <button mat-icon-button  (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-
-  <img src="assets/img/home-logo.svg" alt="Imagem de Navegação">
-</mat-toolbar>
-
-<mat-drawer-container class="container" autosize>
-  <mat-drawer #drawer class="sidenav" mode="over">
-
-      <mat-nav-list class="navlist">
-          <a mat-list-item routerLink="dashboard">
-              <i class="material-icons">ssid_chart</i>
-              Dashboard
-          </a>
-          <a mat-list-item routerLink="">
-              <i class="material-icons">person</i>
-              Meu perfil
-          </a>
-          <a mat-list-item routerLink="">
-              <i class="material-icons">schedule</i>
-              Meu ponto
-          </a>
-
-          <a mat-list-item routerLink="">
-              <i class="material-icons">sms</i>
-              Solicitações
-          </a>
-
-          <a mat-list-item routerLink="">
-              <i class="material-icons">touch_app</i>
-              Controle de ponto
-          </a>
-
-          <a mat-list-item routerLink="">
-              <i class="material-icons">settings</i>
-              Configurações
-          </a>
-
-          <a mat-list-item href="https://github.com/samuel-melo1/PontoAPI-Front" target="_blank">
-              <i class="material-icons">code</i>
-              Github
-          </a>
-          <a mat-list-item (click)="logout()" >
-              <i class="material-icons">logout</i>
-              Logout
-          </a>
-      </mat-nav-list>
-  </mat-drawer>
-
-<router-outlet></router-outlet>
-</mat-drawer-container>
-
- -->
 
  <div class="d-flex flex-column vh-100">
     <nav class="navbar">
@@ -64,52 +9,61 @@
         </div>
     </nav>
   
-    <div class="d-flex flex-grow-1">
-     <!-- Sidebar -->
-        <div [class.active]="isSidebarOpen" class="sidebar border-end">
-            <div class="p-2">
-                <h5 class="text-white">Menu</h5>
-                <ul class="list-unstyled">
-                    <mat-nav-list class="navlist ">
-                        <a mat-list-item routerLink="dashboard">
-                            <i class="material-icons">ssid_chart</i>
-                            Dashboard
-                        </a>
-                        <a mat-list-item routerLink="">
-                            <i class="material-icons">person</i>
-                            Meu perfil
-                        </a>
-                        <a mat-list-item routerLink="">
-                            <i class="material-icons">schedule</i>
-                            Meu ponto
-                        </a>
-        
-                        <a mat-list-item routerLink="">
-                            <i class="material-icons">sms</i>
-                            Solicitações
-                        </a>
-            
-                        <a mat-list-item routerLink="">
-                            <i class="material-icons">touch_app</i>
-                            Controle de ponto
-                        </a>
-        
-                        <a mat-list-item routerLink="">
-                            <i class="material-icons">settings</i>
-                            Configurações
-                        </a>
-            
-                        <a mat-list-item href="https://github.com/samuel-melo1/PontoAPI-Front" target="_blank">
-                            <i class="material-icons">code</i>
-                            Github
-                        </a>
-                        <a mat-list-item (click)="logout()" >
-                            <i class="material-icons">logout</i>
-                            Logout
-                        </a>
-                    </mat-nav-list>
-                </ul>
-            </div>
+    <div class="d-flex flex-grow-1 ">
+        <div [class.active]="isSidebarOpen" class="sidebar border-end p-2 pt-4">
+            <ul class="list-unstyled">
+                <li class="nav-item mb-3">
+                    <a class="nav-link d-flex align-items-center fs-6" routerLink="dashboard">
+                        <i class="material-icons me-3">ssid_chart</i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link d-flex align-items-center fs-6" routerLink="perfil">
+                        <i class="material-icons me-3">person</i>
+                        Meu perfil
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link d-flex align-items-center fs-6" routerLink="">
+                        <i class="material-icons me-3">schedule</i>
+                        Meu ponto
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link d-flex align-items-center fs-6" routerLink="">
+                        <i class="material-icons me-3">sms</i>
+                        Solicitações
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link d-flex align-items-center fs-6" routerLink="">
+                        <i class="material-icons me-3">touch_app</i>
+                        Controle de ponto
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link d-flex align-items-center fs-6" routerLink="">
+                        <i class="material-icons me-3">settings</i>
+                        Configurações
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link d-flex align-items-center fs-6" href="https://github.com/samuel-melo1/PontoAPI-Front" target="_blank">
+                        <i class="material-icons me-3">code</i>
+                        Github
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link d-flex align-items-center fs-6" (click)="logout()">
+                        <i class="material-icons me-3">logout</i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="flex-grow-1">
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>

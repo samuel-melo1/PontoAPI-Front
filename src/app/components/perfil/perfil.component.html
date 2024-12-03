@@ -1,0 +1,58 @@
+<div class="container-fluid vh-100   d-flex justify-content-center align-items-center bg-light">
+    <div class="row w-100 justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <!-- Card -->
+            <div class="card p-4 shadow-sm mt-0 mt-md-5" style="max-height: 80vh; overflow-y: auto;">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4 fs-4">Meus Dados</h5>
+                    <form class="row g-2">
+                        <!-- Nome -->
+                        <div class="form-group col-lg-6 col-md-6 col-12">
+                            <label for="inputName">Nome:</label>
+                            <input type="text"  [disabled]="true" [(ngModel)]="user.name" name="name" class="form-control" id="inputName" placeholder="Ex: João Silva">
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group col-lg-6 col-md-6 col-12">
+                            <label for="inputEmail">Email:</label>
+                            <input type="email"  [disabled]="true" [(ngModel)]="user.email" name="email" class="form-control" id="inputEmail" placeholder="exemplo@email.com">
+                        </div>
+
+                        <!-- CPF -->
+                        <div class="form-group col-lg-6 col-md-6 col-12">
+                            <label for="inputCPF">CPF:</label>
+                            <input type="text" [disabled]="true" [(ngModel)]="user.cpf" name="cpf" class="form-control" mask="000.000.000-00" id="inputCPF" placeholder="000.000.000-00">
+                        </div>
+
+                        <!-- Telefone -->
+                        <div class="form-group col-lg-6 col-md-6 col-12">
+                            <label for="inputPhone">Telefone:</label>
+                            <input type="tel"  [disabled]="true" [(ngModel)]="user.telefone" name="telefone" class="form-control" id="inputPhone" placeholder="(00) 00000-0000">
+                        </div>
+
+                        <!-- Cargo -->
+                        <div class="form-group col-lg-6 col-md-6 col-12">
+                            <label for="inputRole">Cargo:</label>
+                            <input type="text" [disabled]="true" class="form-control" id="inputRole">
+                        </div>
+
+                        <!-- Departamento -->
+                        <div class="form-group col-lg-6 col-md-6 col-12">
+                            <label for="inputDepartment">Departamento:</label>
+                            <input type="text" [disabled]="true" class="form-control" id="inputDepartment">
+                        </div>
+
+                        <div class="form-group col-lg-6 col-md-6 col-12">
+                            <button type="button" class="btn btn-primary">Atualizar</button>
+                        </div>
+                        <!-- <select  class="custom-select col-lg-6 col-md-6 col-12">
+                            <option selected>Departamentos</option>
+                            <option [disabled]="true" *ngFor="let departamets of departamento" [value]="departamets">{{departamets.name}}</option>
+                        </select> -->
+                    </form>
+                </div>
+            </div>
+            <!-- Fim do Card -->
+        </div>
+    </div>
+</div>

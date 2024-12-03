@@ -1,0 +1,14 @@
+.container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border-radius: 8px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  background-color: #ffffff; 
+}
+.container-fluid {
+  background-color: #f8f9fa; 
+}
