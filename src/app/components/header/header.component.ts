@@ -11,10 +11,13 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isSidebarOpen = false;
+  isSubmenuOpen = false;
+
+
   constructor(private router: Router, private authService: AuthService, private toast: ToastrService) { }
 
   ngOnInit(): void {
-    this.router.navigate(['perfil'])
   }
 
   logout(){
@@ -23,11 +26,12 @@ export class HeaderComponent implements OnInit {
     this.toast.success('Logout realizado com sucesso!', 'Logout')
   }
 
-  isSidebarOpen = false;
-
-  toggleSidebar(): void {
+  toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
 
+  toggleSubmenu() {
+    this.isSubmenuOpen = !this.isSubmenuOpen;
+  }
 
 }

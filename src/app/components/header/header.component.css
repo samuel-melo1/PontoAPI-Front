@@ -54,6 +54,18 @@
     margin-left: 250px;
 }
 
+.sidebar ul ul {
+    padding-left: 1rem; /* Indenta as sublistas */
+  }
+  
+  .sidebar ul ul li {
+    margin-bottom: 1rem; /* Espaçamento entre os itens do submenu */
+  }
+  
+  .sidebar ul ul a {
+    font-size: 0.9rem; /* Deixa o texto menor para o submenu */
+  }
+
 @media (max-width: 768px) {
     .sidebar {
         background-color: rgb(29, 165, 147);/* Sidebar ocupa toda a largura em telas menores */

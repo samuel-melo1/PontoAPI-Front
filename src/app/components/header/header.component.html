@@ -1,69 +1,117 @@
-
- <div class="d-flex flex-column vh-100">
+<div class="d-flex flex-column vh-100">
     <nav class="navbar">
-        <div class="container-fluid">
-         <!-- Botão para abrir/fechar a sidebar -->
-            <button class="navbar-toggler" type="button"  (click)="toggleSidebar()" aria-label="Toggle navigation">
-                <mat-icon>menu</mat-icon>
-            </button>
-        </div>
+      <div class="container-fluid">
+        <!-- Botão para abrir/fechar a sidebar -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          (click)="toggleSidebar()"
+          aria-label="Toggle navigation"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
     </nav>
   
-    <div class="d-flex flex-grow-1 ">
-        <div [class.active]="isSidebarOpen" class="sidebar border-end p-2 pt-4">
-            <ul class="list-unstyled">
-                <li class="nav-item mb-3">
-                    <a class="nav-link d-flex align-items-center fs-6" routerLink="dashboard">
-                        <i class="material-icons me-3">ssid_chart</i>
-                        Dashboard
-                    </a>
-                </li>
-                <li class="nav-item mb-3">
-                    <a class="nav-link d-flex align-items-center fs-6" routerLink="perfil">
-                        <i class="material-icons me-3">person</i>
-                        Meu perfil
-                    </a>
-                </li>
-                <li class="nav-item mb-3">
-                    <a class="nav-link d-flex align-items-center fs-6" routerLink="">
-                        <i class="material-icons me-3">schedule</i>
-                        Meu ponto
-                    </a>
-                </li>
-                <li class="nav-item mb-3">
-                    <a class="nav-link d-flex align-items-center fs-6" routerLink="">
-                        <i class="material-icons me-3">sms</i>
-                        Solicitações
-                    </a>
-                </li>
-                <li class="nav-item mb-3">
-                    <a class="nav-link d-flex align-items-center fs-6" routerLink="">
-                        <i class="material-icons me-3">touch_app</i>
-                        Controle de ponto
-                    </a>
-                </li>
-                <li class="nav-item mb-3">
-                    <a class="nav-link d-flex align-items-center fs-6" routerLink="">
-                        <i class="material-icons me-3">settings</i>
-                        Configurações
-                    </a>
-                </li>
-                <li class="nav-item mb-3">
-                    <a class="nav-link d-flex align-items-center fs-6" href="https://github.com/samuel-melo1/PontoAPI-Front" target="_blank">
-                        <i class="material-icons me-3">code</i>
-                        Github
-                    </a>
-                </li>
-                <li class="nav-item mb-3">
-                    <a class="nav-link d-flex align-items-center fs-6" (click)="logout()">
-                        <i class="material-icons me-3">logout</i>
-                        Logout
-                    </a>
-                </li>
+    <div class="d-flex flex-grow-1">
+      <div [class.active]="isSidebarOpen" class="sidebar border-end p-2 pt-4">
+        <ul class="list-unstyled">
+          <li class="nav-item mb-3">
+            <a class="nav-link d-flex align-items-center fs-6" routerLink="">
+              <i class="material-icons me-3">ssid_chart</i>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item mb-3">
+            <a class="nav-link d-flex align-items-center fs-6" routerLink="perfil">
+              <i class="material-icons me-3">person</i>
+              Meus dados
+            </a>
+          </li>
+          <li class="nav-item mb-3">
+            <a class="nav-link d-flex align-items-center fs-6" routerLink="meu-ponto">
+              <i class="material-icons me-3">schedule</i>
+              Meu ponto
+            </a>
+          </li>
+          <li class="nav-item mb-3">
+            <a class="nav-link d-flex align-items-center fs-6" routerLink="solicitacoes">
+              <i class="material-icons me-3">sms</i>
+              Solicitações
+            </a>
+          </li>
+          <li class="nav-item mb-3">
+            <a class="nav-link d-flex align-items-center fs-6" routerLink="controle-ponto">
+              <i class="material-icons me-3">touch_app</i>
+              Controle de ponto
+            </a>
+          </li>
+          <li class="nav-item mb-3">
+            <a
+              class="nav-link d-flex align-items-center fs-6"
+              (click)="toggleSubmenu()"
+            >
+              <i class="material-icons me-3">settings</i>
+              Configurações
+              <mat-icon class="ms-auto" *ngIf="isSubmenuOpen">expand_less</mat-icon>
+              <mat-icon class="ms-auto" *ngIf="!isSubmenuOpen">expand_more</mat-icon>
+            </a>
+            <!-- Submenu -->
+            <ul class="list-unstyled ps-4 mt-1" *ngIf="isSubmenuOpen">
+              <li class="nav-item mb-2">
+                <a class="nav-link" routerLink="configuracoes/departamentos">
+                    <i class="material-icons me-3">corporate_fare</i>
+                  Cadastrar Departamento
+                </a>
+              </li>
+              <li class="nav-item mb-2">
+                <a class="nav-link" routerLink="configuracoes/cargo">
+                    <i class="material-icons me-3">badge</i>
+                    Cadastrar Cargo
+                </a>
+              </li>
+              <li class="nav-item mb-2">
+                <a class="nav-link" routerLink="configuracoes/usuarios">
+                    <i class="material-icons me-3">groups</i>
+                  Gerenciar Usuários
+                </a>
+              </li>
+              <li class="nav-item mb-2">
+                <a class="nav-link" routerLink="configuracoes/permissoes">
+                    <i class="material-icons me-3">lock</i>
+                  Permissões
+                </a>
+              </li>
             </ul>
-        </div>
-        <div class="flex-grow-1">
-            <router-outlet></router-outlet>
-        </div>
+          </li>
+          <li class="nav-item mb-3">
+            <a class="nav-link d-flex align-items-center fs-6" routerLink="relatorios">
+              <i class="material-icons me-3">summarize</i>
+              Relatórios
+            </a>
+          </li>
+          <li class="nav-item mb-3">
+            <a
+              class="nav-link d-flex align-items-center fs-6"
+              href="https://github.com/samuel-melo1/PontoAPI-Front"
+              target="_blank"
+            >
+              <i class="material-icons me-3">code</i>
+              Github
+            </a>
+          </li>
+          <li class="nav-item mb-3">
+            <a class="nav-link d-flex align-items-center fs-6" (click)="logout()">
+              <i class="material-icons me-3">logout</i>
+              Logout
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="flex-grow-1">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-</div>
+  </div>
+  

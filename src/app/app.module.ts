@@ -26,8 +26,10 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { HeaderComponent } from './components/header/header.component';
-
-
+import { DepartamentoCreateComponent } from './components/configuracoes/departamento-create/departamento-create.component';
+import { DepartamentoListComponent } from './components/configuracoes/departamento-list/departamento-list.component';
+import { DepartamentoUpdateComponent } from './components/configuracoes/departamento-update/departamento-update.component';
+import { DepartamentoDeleteComponent } from './components/configuracoes/departamento-delete/departamento-delete.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,10 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     PerfilComponent,
     HeaderComponent,
+    DepartamentoCreateComponent,
+    DepartamentoListComponent,
+    DepartamentoUpdateComponent,
+    DepartamentoDeleteComponent,
   ],
   imports: [
     BrowserModule,

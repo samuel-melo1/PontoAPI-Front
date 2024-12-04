@@ -15,8 +15,17 @@ import { Permissoes } from 'src/app/models/permissoes';
 })
 export class PerfilComponent implements OnInit {
 
-  cargo: Cargo[] = [];
-  departamento: Departamento[] = []; 
+  cargo: Cargo = {
+    id_cargo: '',
+    name: '',
+    status: true
+  }
+  departamento: Departamento = {
+    id_departamento: '',
+    name: '',
+    status: true 
+  } 
+
   permis: Permissoes[] = [];
 
   user: Users ={
@@ -44,14 +53,10 @@ export class PerfilComponent implements OnInit {
 
   findByEmail(): void {
     this.service.findByEmail(this.getDecodedAccessToken(localStorage.getItem('token'))).subscribe(response => {
-      console.log(response);  // Verifique a estrutura de 'response'
+      console.log(response);  
       this.user = response;
-      // Se for um único objeto, converta para um array
-      this.cargo = Array.isArray(response.cargo) ? response.cargo : [response.cargo];
-      this.departamento = Array.isArray(response.departamento) ? response.departamento : [response.departamento];
-  
-      console.log(this.cargo);
-      console.log(this.departamento);
+      this.departamento = response.departamento;
+      this.cargo = response.cargo; 
     });
   }
 
@@ -61,8 +66,7 @@ export class PerfilComponent implements OnInit {
     } catch(Error) {
       return null;
    }
-  }
-
+  } 
   
 }
 
